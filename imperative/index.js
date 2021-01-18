@@ -13,7 +13,7 @@ const generatePreviews = async ({ StreamName: streamName }) => {
     try {
         // Retrieve Clip
         const now = new Date();
-        const endpoint = await kvs.getDataEndpoint({ StreamName: streamName, APIName:"GET_CLIP" }).promise();
+        const endpoint = await kvs.getDataEndpoint({ StreamName: streamName, APIName:'API_NAME' }).promise();
         const kvam = new AWS.KinesisVideoArchivedMedia({
             region: "eu-west-1",
             endpoint: endpoint.DataEndpoint
@@ -39,6 +39,7 @@ const generatePreviews = async ({ StreamName: streamName }) => {
         console.log("Uploaded Previews")
     } catch(err) {
         console.error(`Unable to generate thumbnail for ${streamName}: ${err}`);
+        throw err // we want process to fail
     }
 }
 

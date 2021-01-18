@@ -1,3 +1,7 @@
 # functionalish-refactor
 
-A refactor of some asynchronous imperative code to a more functional style
+Three styles of effectful code:
+
+- Imperative
+- Functional-ish (using promises)
+- Functional (using futures and monad transformers)

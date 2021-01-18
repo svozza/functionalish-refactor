@@ -51,12 +51,15 @@ const pipe = (...fs) => fs.reduce((f, g) => x => g(f(x)));
 const filter = p => xs => xs.filter(p);
 
 const generatePreviews = async ({ StreamName: streamName }) => {
-    return kvs.getDataEndpoint({ StreamName: streamName, APIName: "GET_CLIP" }).promise()
+    return kvs.getDataEndpoint({ StreamName: streamName, APIName: 'API_NAME' }).promise()
         .then(getClip(streamName))
         .then(screenshot(streamName))
         .then(map(uploadThumbnail(streamName)))
         .then(all)
-        .catch(err => console.error(`Unable to generate thumbnail for ${streamName}: ${err}`));
+        .catch(err => {
+            console.error(`Unable to generate thumbnail for ${streamName}: ${err}`)
+            throw err // we want process to fail
+        });
 };
 
 exports.handler = async (event) => {
