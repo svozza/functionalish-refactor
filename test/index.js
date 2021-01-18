@@ -105,7 +105,7 @@ describe('index', () => {
 
         });
 
-        it.skip('should work for functional implementation', async () => {
+        it('should work for functional implementation', async () => {
             setTimeout(() => {
                 mockedStream.emit('data', 'Hello data!');
                 mockedStream.emit('end');
