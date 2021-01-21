@@ -41,7 +41,6 @@ describe('index', () => {
                             if(Key !== 'public/previews/myStream.mp4') throw new Error('upload params are wrong');
                         }
                         if (Body !== 'buffer') throw new Error('upload params are wrong');
-                        console.log(calls)
                         return 'uploaded'
                     }
                 }

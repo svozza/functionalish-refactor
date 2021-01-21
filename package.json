@@ -19,7 +19,7 @@
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.0.20",
     "aws-sdk": "2.690.0",
-    "crocks": "git@github.com:svozza/crocks.git#c1fcd1992e2462fd0bed7d32d320e27d20b7982e",
+    "crocks": "git@github.com:svozza/crocks.git#master",
     "fluent-ffmpeg": "^2.1.2",
     "ramda": "^0.27.1",
     "rewire": "^5.0.0"
