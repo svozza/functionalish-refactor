@@ -97,7 +97,7 @@ describe('index', () => {
                 setTimeout(() => {
                     mockedStream.emit('data', 'Hello data!');
                     mockedStream.emit('end');
-                }, 500);
+                }, 100);
 
                 return index.handler({});
             });
@@ -108,7 +108,7 @@ describe('index', () => {
             setTimeout(() => {
                 mockedStream.emit('data', 'Hello data!');
                 mockedStream.emit('end');
-            }, 500);
+            }, 100);
 
             return functional.handler({})
                 .runWith({
