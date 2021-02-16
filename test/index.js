@@ -120,7 +120,8 @@ describe('index', () => {
                         readFile: mockReadFile,
                         writeFile: fs.writeFile
                     },
-                    Bucket: 'MyBucket'
+                    Bucket: 'MyBucket',
+                    region: 'eu-west-1'
                 })
                 .toPromise();
         });

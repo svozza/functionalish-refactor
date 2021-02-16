@@ -18,10 +18,10 @@ function getEndpoint(apiName) {
 }
 
 function getClip(endpoint) {
-    return ReaderAsync(({streamName, KinesisVideoArchivedMedia}) => {
+    return ReaderAsync(({streamName, KinesisVideoArchivedMedia, region}) => {
         const now = new Date();
         const kvam = new KinesisVideoArchivedMedia({
-            region: 'eu-west-1',
+            region,
             endpoint: endpoint.DataEndpoint
         });
 
